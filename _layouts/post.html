@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="Kuma">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+		<link rel="stylesheet" type="text/css" href="style/posts.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<section class="hero" id="posts">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h1 class="title">{{ page.title | escape }}</h1>
+
+					<div id="separation" class="hr">
+						<hr/>
+					</div> 
+
+					{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
+					<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
+
+					<div style="display: inline-block; text-align: left;">
+					{{ content }}
+					</div>
+
+					<br><br>
+					<a href="https://bearbearsbarebear.github.io/"><img id="eye" class="logo" src="images/wired.gif"></a>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
