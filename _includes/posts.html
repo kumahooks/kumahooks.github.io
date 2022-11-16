@@ -26,31 +26,16 @@
 
 					<div style="display: inline-block; text-align: left;">
 						<ul style="list-style-type:disc">
+							{%- for post in site.posts limit:post_limit -%}
 							<li>
-								2022 Nov 15
+								{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+								<span class="post-meta">{{ post.date | date: date_format }}</span>
 								-
-								<a href="">Pellentesque Pretium</a>
+								<a class="post-link" href="{{ post.url | relative_url }}">
+								{{ post.title | escape }}
+								</a>
 							</li>
-							<li>
-								2022 Nov 11
-								-
-								<a href="">Fusce Elementum</a>
-							</li>
-							<li>
-								2022 Nov 08
-								-
-								<a href="">Consectetur Adipiscing</a>
-							</li>
-							<li>
-								2022 Nov 03
-								-
-								<a href="">Lorem Ipsum</a>
-							</li>
-							<li>
-								2022 Nov 01
-								-
-								<a href="">Reversing Sublime Text</a>
-							</li>
+							{%- endfor -%}
 						</ul>
 					</div>
 
