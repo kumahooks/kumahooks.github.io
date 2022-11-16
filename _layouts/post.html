@@ -6,8 +6,9 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+		<title>{{ page.title | escape }}</title>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-		<link rel="stylesheet" type="text/css" href="style/posts.css">
+		<link rel="stylesheet" type="text/css" href="/style/posts.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 
@@ -25,11 +26,13 @@
 					<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
 
 					<div style="display: inline-block; text-align: left;">
-					{{ content }}
+						<h3>
+							{{ content }}
+						</h3>
 					</div>
 
 					<br><br>
-					<a href="https://bearbearsbarebear.github.io/"><img id="eye" class="logo" src="images/wired.gif"></a>
+					<a href="https://bearbearsbarebear.github.io/"><img id="eye" class="logo" src="/images/wired.gif"></a>
 				</div>
 			</div>
 		</section>
