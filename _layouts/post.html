@@ -1,60 +1,34 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="description" content="Kuma">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+---
+layout: default
+---
 
-		<!-- Begin SEO -->
-		{% seo %}
-		<!-- End SEO -->
+<body>
+	<section class="hero" id="post">
+		<div class="hero-body">
+			<div class="container has-text-centered">
 
-		<title>{{ page.title | escape }}</title>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-		<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-		<link rel="stylesheet" type="text/css" href="/css/override.css">
+				<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+					<header class="post-header">
+						<h1 class="title">{{ page.title | escape }}</h1>
 
-		<!-- Begin highlight.js support -->
-		<link rel="stylesheet" href="/js/highlightjs/styles/github.css">
-		<link rel="stylesheet" href="/js/highlightjs/styles/ssms.css" />
+						{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
+						<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
 
-		<script type="text/javascript" src="/js/highlightjs/highlight.min.js"></script>
+						<div id="separation" class="hr">
+							<hr/>
+						</div>
+					</header>
 
-		<script type="text/javascript" src="/js/highlightjs/languages/plaintext.min.js"></script>
-		<script type="text/javascript" src="/js/highlightjs/languages/powershell.min.js"></script>
-		<script type="text/javascript" src="/js/highlightjs/languages/tsql.min.js"></script>
-		<script type="text/javascript" src="/js/highlightjs/languages/dot.min.js"></script>
-		<script type="text/javascript" src="/js/highlightjs/languages/python.min.js"></script>
-
-		<script type="text/javascript"> hljs.highlightAll(); </script>
-		<!-- end highlight.js support -->
-
-	</head>
-
-	<body>
-		<section class="hero" id="post">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-					<h1 class="title">{{ page.title | escape }}</h1>
-
-					<div id="separation" class="hr">
-						<hr/>
-					</div> 
-
-					{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
-					<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
-
-					<div style="display: inline-block; text-align: left;">
-						<h3>
+					<div class="post-content e-content" itemprop="articleBody">
+						<div style="display: inline-block; text-align: left;">
 							{{ content }}
-						</h3>
+						</div>
 					</div>
 
 					<br><br>
 					<a href="https://bearbearsbarebear.github.io/posts.html"><img id="eye" class="logo" src="/images/wired.gif"></a>
-				</div>
+				</article>
 			</div>
-		</section>
-	</body>
-</html>
+		</div>
+	</section>
+</body>
