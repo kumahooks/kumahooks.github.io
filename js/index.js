@@ -22,6 +22,7 @@ function play_sound()
 
 function set_stuff()
 {
+	/*
 	var file = location.pathname.split("/").pop();
 	var link = document.createElement("link");
 
@@ -30,6 +31,7 @@ function set_stuff()
 	link.media = "screen,print";
 
 	link.href = "style\\index.css";
+	*/
 
 	//play_sound();
 
@@ -41,7 +43,7 @@ function set_stuff()
 	})
 	*/
 
-	document.getElementsByTagName("head")[0].appendChild(link);
+	//document.getElementsByTagName("head")[0].appendChild(link);
 }
 
 window.onload = function () {
