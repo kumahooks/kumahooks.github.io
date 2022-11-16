@@ -6,28 +6,21 @@ layout: default
 	<section class="hero" id="post">
 		<div class="hero-body">
 			<div class="container has-text-centered">
+				<h1 class="title">{{ page.title | escape }}</h1>
 
-				<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-					<header class="post-header">
-						<h1 class="title">{{ page.title | escape }}</h1>
+				{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
+				<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
 
-						{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
-						<h2 id="love_lain" class="title">⌈{{ page.date | date: date_format }}⌋</h2>
+				<div id="separation" class="hr">
+					<hr id="title" />
+				</div>
 
-						<div id="separation" class="hr">
-							<hr/>
-						</div>
-					</header>
+				<div style="display: inline-block; text-align: left;">
+					{{ content }}
+				</div>
 
-					<div class="post-content e-content" itemprop="articleBody">
-						<div style="display: inline-block; text-align: left;">
-							{{ content }}
-						</div>
-					</div>
-
-					<br><br>
-					<a href="https://bearbearsbarebear.github.io/posts.html"><img id="eye" class="logo" src="/images/wired.gif"></a>
-				</article>
+				<br><br>
+				<a href="https://bearbearsbarebear.github.io/posts.html"><img id="eye" class="logo" src="/images/wired.gif"></a>
 			</div>
 		</div>
 	</section>

@@ -18,22 +18,25 @@
 	}
 }
 
-section#post h1 { 
+h1.title { 
 	color:#c1b492;
 	margin-bottom: 0px;
 	animation: blink 3s ease-in-out infinite;
 }
 
-section#post hr {
+hr {
 	border-color: #c1b492;
-	display: inline-block;
-	width: 206px;
 	height: 1px;
 	border-style: groove;
 	box-shadow: none;
 	border-bottom: 0px;
-	margin-top: -5px;
-	margin-bottom: 15px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+hr#title {
+	display: inline-block;
+	width: 206px;
 }
 
 section#post h2 {
@@ -64,9 +67,10 @@ section#post a {
 }
 
 .hljs {
-	background: #e65858;
+	background: #121213;
 }
 
 pre, code {
-	background-color: #323277;
+	background-color: #18181a;
+	border: 1px solid #18181c;
 }
