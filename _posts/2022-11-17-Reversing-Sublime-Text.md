@@ -12,11 +12,15 @@ This is posted with the intention of education and nothing more.
 ```
 <br/>
 Recently I was messing with discord bots, mostly to troll friends; like how I made a bot change a friend's nickname every time he tried to change it back to his original :)
+
 Anyway, I've always used Sublime Text, and to write my bot's code I was of course using it too. While at it, I kept getting bugged by the unregistered screen that kept showing occasionally, and while I've always used Sublime Text, I've never officially registered because of reasons.
+
 Having said that, I decided to reverse it to see how easy it was and how it was done.
 
 I found two ways of doing the job, one that instantly does it once you open the editor and one by entering any key in the input box.
+
 <br/>
+
 ### 1. Run and done
 I started checking the "About Sublime Text" window, which showed whether it was registered or not. Poking with the code around that part I found out it checks if a specific address is 0 or not.
 
