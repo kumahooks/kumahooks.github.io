@@ -8,8 +8,7 @@ html {
 
 .hero {
 	background-color:#000000;
-	color:#000000;
-	letter-spacing:4px;
+	letter-spacing:3px;
 	-webkit-font-smoothing:none;
 
 	position: absolute;
