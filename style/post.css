@@ -107,6 +107,14 @@ a {
     letter-spacing: 5px;
 }
 
+a:visited {
+    color: #d2738a;
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+
 .hljs {
 	background: #121213;
 }
