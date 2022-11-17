@@ -79,8 +79,14 @@ section#post a {
 	background: #121213;
 }
 
+div#contentblock {
+	max-width: 100%;
+	max-block-size: 100%;
+	max-inline-size: 100%;
+}
+
 pre, code {
 	background-color: #18181a;
 	border: 1px solid #18181c;
-	max-width: 900px;
+	max-width: 100%;
 }
