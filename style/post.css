@@ -65,6 +65,8 @@ section#post h3, li, p {
     padding: 0px;
     font-size: 0.75rem;
     letter-spacing: 3px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 
 section#post a {
@@ -89,9 +91,4 @@ pre, code {
 	background-color: #18181a;
 	border: 1px solid #18181c;
 	max-width: 100%;
-}
-
-p {
-	margin-top: 6px;
-	margin-bottom: 6px;
 }
