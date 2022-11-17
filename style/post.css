@@ -119,6 +119,10 @@ a:visited {
 	background: #121213;
 }
 
+.container {
+	max-width: calc(800px - (30px * 2));
+}
+
 div#contentblock {
 	max-width: 100%;
 	max-block-size: 100%;
