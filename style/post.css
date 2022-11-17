@@ -63,7 +63,8 @@ section#post h3, li, p {
     color: #c1b492;
     padding: 0px;
     font-size: 0.75rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 section#post a {
