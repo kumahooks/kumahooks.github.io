@@ -3,6 +3,8 @@ title: Reversing Sublime Text
 description: I decided to check how Sublime Text works
 ---
 
+## Reversing Sublime Text
+
 ### Attention
 ```
 This was done to satiate my scientific curiosity. 
