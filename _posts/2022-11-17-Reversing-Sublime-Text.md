@@ -5,7 +5,7 @@ description: I decided to check how Sublime Text works
 
 ## Reversing Sublime Text
 
-### Attention
+#### Attention
 ```
 This was done to satiate my scientific curiosity. 
 This is posted with the intention of education and nothing more.
