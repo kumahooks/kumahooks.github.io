@@ -2,6 +2,10 @@
 	scrollbar-color: #4e5151 #2b2d2d;
 }
 
+html {
+	background-color:#000000;
+}
+
 .hero {
 	background-color:#000000;
 	color:#000000;
@@ -68,7 +72,7 @@ section#post a {
     margin: 0px;
     padding: 0px;
     font-size: 13px;
-    letter-spacing: 6px;
+    letter-spacing: 5px;
 }
 
 .hljs {
@@ -78,4 +82,5 @@ section#post a {
 pre, code {
 	background-color: #18181a;
 	border: 1px solid #18181c;
+	max-width: 900px;
 }
