@@ -24,14 +24,14 @@ Looking at the string references, there are some encrypted strings which so far 
 1. The strings are accessed in a function inside `sub_100012F1`. They are decrypting the strings to function names, like `CloseHandle`, `ConnectedNamedPipe`, etc. The way they are encrypted doesn't matter to me, at least not now.
 2. `sub_100012F1` is called in `sub_10001163`, which seems to be our DllMain.
 
-For reasons beyond me x32 started failing me when I started to one-step through the function at `sub_10001094` (threaded function in DllMain). So at this moment, I switched to good ol' Olly.
+For reasons beyond me x32 started failing me when I started to one-step through the function at `sub_10001094` (function in DllMain being run in a thread). So at this moment, I switched to good ol' Olly.
 
 While one-stepping `sub_10001094` the first problem we have is a call attempting to run a NULL function. This function has as one of its arguments the pipe's address, so I assume this was supposed to be `CreateNamedPipeA`.
 
 ![image](https://user-images.githubusercontent.com/69819027/202642594-de51638f-3208-4104-aff9-1e7b5e928f54.png)
 
 
-My assumption is quickly proven true when I look for references to the given function's address, finding it is one of the functions deobfuscated by `sub_100012F1`. The problem is, `sub_100012F1` not only deobfuscates the function names but also finds in the given module the function's address (`sub_1000125C`) and stores it in what seems to be a struct. While trying to find the function `CreateNamedPipeA` in the kernel dll, it can't, thus storing 0 and causing the error.
+My assumption is quickly proven true when I look for references to the given function's address, finding it is one of the functions decrypted by `sub_100012F1`. The problem is, `sub_100012F1` not only decrypts the function names but also finds in the given module the function's address (`sub_1000125C`) and stores it in what seems to be a struct. While trying to find the function `CreateNamedPipeA` in the kernel dll, it can't, thus storing 0 and causing the error.
 
 ![image](https://user-images.githubusercontent.com/69819027/202642608-0b7b0ccc-a0f4-4d64-9bb6-973c94501dd9.png)
 
@@ -52,7 +52,7 @@ Console.WriteLine(new Flag().GetFlag("WeAreDoingFlareOn!"));
 ```
 With our dll loaded as a dependency. (Gotta rename it to FlareOn_x86.dll from HowDoesThisWork.dll)
 
-Anyway after running both the .dll and then our code, our execution past the threaded function `sub_10001094` continues. At some point, it then calls `sub_10001000` which checks if the entered flag is valid. The function is rather simple and seems to give us the answer right away: our password seems to be `MyV0ic3!`.
+Anyway after running both the .dll and then our code, our execution past the function in the thread `sub_10001094` continues. At some point, it then calls `sub_10001000` which checks if the entered flag is valid. The function is rather simple and seems to give us the answer right away: our password seems to be `MyV0ic3!`.
 
 After running both of the apps with the argument above, `sub_10001000` gives us the flag:
 
