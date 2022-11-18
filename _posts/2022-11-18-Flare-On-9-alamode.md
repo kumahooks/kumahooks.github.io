@@ -1,6 +1,6 @@
 # Flare-On 9 "alamode"
 
-I decided to post in here my writeup for this challenge because it's one I enjoyed, because of the broken modules addresses and piping. My solution is nothing fancy but, yeah. :)
+I decided to post in here my writeup for this challenge because it's one I enjoyed. The broken modules addresses and piping were fun! My solution is nothing fancy but, yeah. :)
 
 
 ## Solution
