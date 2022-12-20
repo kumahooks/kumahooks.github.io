@@ -26,7 +26,7 @@ class Matrix
 		// Config
 		this.fontSize = 14;
 		this.color = "#d2738a";
-		this.char_set = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!?";
+		this.char_set = "0123456789abcdefghijklmnopqrstuvwxyz$+*/=%\"'#&-(),.;:?!\\|{}<>[]^~";
 		this.column_chance = 0.015; // Chance to start raining a column
 		this.brightness_chance = 0.3 // Chance to change a character's brightness
 
