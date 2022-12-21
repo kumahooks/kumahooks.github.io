@@ -76,6 +76,27 @@ class Matrix
 		while (column.children.length > 0) column.removeChild(column.firstChild);
 	}
 
+	create_element(column)
+	{
+		// Add new character
+		let character = this.char_set.charAt(Math.floor(Math.random() * this.char_set.length));
+		let element = document.createElement("div");
+		element.className = "matrix-character";
+		element.style.position = "absolute";
+		element.style.top = `${column.children.length * this.fontSize}px`;
+
+		let hex = this.color;
+		// Randomize brightness of a few characters
+		if (Math.random() < this.brightness_chance) {
+			hex = change_brightness(hex, 0.5);
+		}
+
+		element.style.color = hex;
+
+		element.innerHTML = character;
+		return element;
+	}
+
 	draw() 
 	{
 		// Loop through the columns
@@ -122,22 +143,7 @@ class Matrix
 			}
 
 			// Add new character
-			let character = this.char_set.charAt(Math.floor(Math.random() * this.char_set.length));
-			let element = document.createElement("div");
-			element.className = "matrix-character";
-			element.style.position = "absolute";
-			element.style.top = `${column.children.length * this.fontSize}px`;
-
-			let hex = this.color;
-			// Randomize brightness of a few characters
-			if (Math.random() < this.brightness_chance) {
-				hex = change_brightness(hex, 0.5);
-			}
-
-			element.style.color = hex;
-
-			element.innerHTML = character;
-			column.appendChild(element);
+			column.appendChild(this.create_element(column));
 		}
 	}
 }
