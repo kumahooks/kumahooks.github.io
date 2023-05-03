@@ -1,0 +1,168 @@
+/* removes scrollbar */
+html, body {
+	height: 100%;
+	overflow: hidden;
+	background-color: #202123;
+}
+
+.hero {
+	background-color: #202123;
+	color: #202123;
+	letter-spacing: 1px;
+	-webkit-font-smoothing: none;
+	text-align: left;
+
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.hero h1#lain {
+	color: #d2738a;
+	font-size: 10px;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/* Menu nav bar */
+#nav {
+	background-color: #2d2e38;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+
+#nav a {
+	display: inline-block;
+	padding: 8px 20px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #d2738a;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+/* Columns types */
+.column {
+	background-color: #2d2e38;
+	position: fixed;
+	height: 102px;
+	width: 180px;
+	top: 80px;
+	left: 10px;
+	right: 0;
+	z-index: 999;
+	border-radius: 6px;
+}
+
+.nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.nav a {
+	display: flex;
+	color: #d2738a;
+	text-align: center;
+	margin-bottom: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	position: relative; /* make the parent element position relative */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+.nav-link.active {
+	color: red;
+}
+
+.nav a:hover {
+  color: red;
+}
+
+.nav a img {
+	height: 32px;
+}
+
+.nav-text {
+	margin-left: 10px; /* add some space between image and text */
+}
+
+
+/* Items columns */
+.column-items {
+	background-color: #2d2e38;
+	position: fixed;
+	height: 700px;
+	width: 900px;
+	top: 80px;
+	left: 200px;
+	right: 0;
+	z-index: 999;
+	border-radius: 6px;
+	overflow-y: scroll;
+}
+
+.column-items table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.column-items th {
+	color: #d2738a;
+	text-align: center;
+	font-size: 18px;
+}
+
+.column-items td {
+	color: white;
+	text-align: center;
+}
+
+.column-items tbody tr:nth-child(odd) {
+	background-color: #444654;
+}
+
+.column-items tbody tr:nth-child(even) {
+	background-color: #343541;
+}
+
+.column-items img {
+	height: 32px;
+}
+
+#loading-overlay {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black background */
+	display: none; /* Initially hidden */
+}
+
+#loading-message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 1.5rem;
+}
