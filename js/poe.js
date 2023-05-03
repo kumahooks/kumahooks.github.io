@@ -38,7 +38,7 @@ async function get_all_items_poewatch()
 	const categories = ['card', 'currency', 'accessory', 'armour', 'weapon'];
 
 	for (const category of categories) {
-		const url = "https://corsproxy.io/?" + encodeURIComponent("https://api.poe.watch/get?category=${category}&league=${current_league}");
+		const url = "https://corsproxy.io/?" + encodeURIComponent(`https://api.poe.watch/get?category=${category}&league=${current_league}`);
 		const my_headers = { 'user-agent': 'currency-flipper/0.0.1' };
 		const response = await fetch(url, { headers: my_headers });
 		const data = await response.json();
