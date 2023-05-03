@@ -1,7 +1,6 @@
 /* TODO:
  * Fix item's base types search
  * Show divine:chaos rate
- * Sort by profits
 */
 
 // Loading recipes from recipes.json
