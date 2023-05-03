@@ -1,6 +1,7 @@
 /* TODO:
  * Fix item's base types search
  * Show divine:chaos rate
+ * The way it fetches items now is slow and bad, because we load category by category for the user, and we still fetch all categories anyway
 */
 
 // Loading recipes from recipes.json
