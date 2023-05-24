@@ -26,7 +26,7 @@ html, body {
 	}
 }
 
-section#index a#posts, a#rice, a#music, a#about {
+section#index a#posts, a#rice, a#contact, a#about {
     color: #d2738a;
     padding-left: 5px;
     padding-right: 11px;
