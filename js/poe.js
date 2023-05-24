@@ -6,7 +6,7 @@
 
 // Loading recipes from recipes.json
 let recipes;
-fetch('poe/recipes.json')
+fetch('misc/recipes.json')
 	.then(response => response.json())
 	.then(data => {
 		recipes = data.category;
