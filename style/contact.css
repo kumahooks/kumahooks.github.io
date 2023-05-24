@@ -1,0 +1,23 @@
+/* removes scrollbar */
+html, body {
+	height: 100%;
+	overflow:hidden;
+	background-color:#000000;
+}
+
+.hero {
+	background-color:#000000;
+	color:#000000;
+	letter-spacing:4px;
+	-webkit-font-smoothing:none;
+	text-align:center;
+
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+
+
