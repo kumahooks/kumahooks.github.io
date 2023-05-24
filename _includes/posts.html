@@ -30,7 +30,7 @@
 								{%- assign date_format = site.minima.date_format | default: "%Y %b %-d" -%}
 								{{ post.date | date: date_format }}
 								{%- if post.date.day < 10 -%}
-									&nbsp;
+									&ensp;
 								{%- endif -%}
 								-
 								<a class="post-link" href="{{ post.url | relative_url }}">
