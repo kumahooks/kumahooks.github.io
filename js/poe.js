@@ -2,6 +2,9 @@
  * Fix item's base types search
  * Show divine:chaos rate
  * The way it fetches items now is slow and bad, because we load category by category for the user, and we still fetch all categories anyway
+
+ * This is a work in progress. Might not fetch correct values or properly calculate profits.
+ * This project will be resumed in the next PoE's leagues.
 */
 
 // Loading recipes from recipes.json
