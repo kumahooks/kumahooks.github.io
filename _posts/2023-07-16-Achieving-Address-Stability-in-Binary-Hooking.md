@@ -3,7 +3,9 @@ title: Achieving Address Stability in Binary Hooking
 description: Explanation and PoF of pattern matching techniques
 ---
 
-# The Problem
+# Achieving Address Stability in Binary Hooking
+
+## The Problem
 Okay, so you're into reverse engineering. You found a cool function, maybe you're writing a cheat for a game, or maybe you were just poking around a binary. Writing a solution that will leverage whatever information you found is somewhat pointless: if you want to change parts of code in a binary, you will quickly notice that it's not easily accessible at the same address you initially stumbled upon.
 
 One reason behind this hurdle is a security mechanism known as Address Space Layout Randomization (ASLR) which may be enabled when a program is compiled. ASLR introduces a level of unpredictability by randomizing the base addresses of modules within a process's address space. As a result, each time the binary is loaded, the addresses of functions and other code segments can vary. This dynamic nature makes it impractical to hardcode addresses when attempting to hook and modify functions within a binary. Furthermore, recompiling the binary can introduce alterations in the code structure, leading to changes in the addresses of critical functions. Consequently, relying on hard-coded addresses becomes impractical and unreliable, as they may no longer correspond to the correct function locations.
@@ -11,10 +13,10 @@ One reason behind this hurdle is a security mechanism known as Address Space Lay
 But fear not! There's a solution to this problem: pattern matching. By employing pattern matching techniques, we can dynamically locate the target function within the binary's memory, regardless of its randomized address. This approach allows us to achieve what we desire — consistent and reliable function hooking.
 
 
-# Achieving Stability
+## Achieving Stability
 Here we'll dive into the code solution of mine developed for the game Grandline Adventures. This code serves as a practical example to illustrate how address stability can be achieved using pattern matching techniques.
 
-## Locating the Target Function
+### Locating the Target Function
 To effectively locate the target function within the binary's memory, we employ a multi-step process.
 
 First, we utilize the `GetSectionHeaderInfo` function to retrieve valuable information about the `.text` section of the game binary. This section contains the executable code of the program.
@@ -150,7 +152,7 @@ if (pParseWorldBossData == NULL) {
 }
 ```
 
-## Establishing the Hook
+### Establishing the Hook
 Once we have identified the address of the target function using pattern matching, we store it in the variable `pParseWorldBossData`. With the address in hand, we can proceed to set up a function pointer that will be used for detouring and redirecting the execution flow.
 
 This is how our code looks like applying everything above:
@@ -183,7 +185,7 @@ DWORD WINAPI MainThread(LPVOID param)
 ```
 
 
-# And there it is
+## And there it is
 In the realm of reverse engineering and binary hooking, ensuring address stability is a fundamental challenge. The dynamic nature of address variations caused by factors like ASLR and code recompilation makes it impractical to rely on hard-coded addresses. By dynamically locating the target function within the binary's memory, we can reliably hook and modify functions, regardless of address variations.
 
 I might give detouring a deeper focus in a next post, sooo... yeah :)
