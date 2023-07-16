@@ -81,7 +81,7 @@ Using the obtained `pCodeMemory` address, we create an instance of `Pattern` cal
 To pinpoint the exact address of the target function within the binary's memory, we utilize the `Find` method of the `Pattern` class. This method takes several parameters:
 * The first parameter is the binary mask, represented as a sequence of bytes, that corresponds to the desired instruction sequence. In our case, this is `\x8D\x5D\xD0\x8B\x45\xB0\x83\xEC\x04\x89\x9D\x6C\xFF\xFF\xFF\x8B\x55\xCC\x39\xD9\x0F\x84\xA7\x01\x00\x00\x8D\x75\xB8\x8B\x5D\xD0\x39\xF0\x0F\x84`;
 * The second parameter is the string mask, which defines the expected pattern of the bytes in the instruction sequence. It helps to differentiate between bytes that must match exactly (x) and bytes that can have any value (?). In our case, the string mask is `xx?xx?xx?xx????xx?xxxx????xx?xx?xxxx`;
-* The third and fourth parameters aren't exactly relevant to us, but findType is about how we will interpret the returning address, and matchNumber stats what order of occurence we want to rely on.
+* The third and fourth parameters aren't exactly relevant to us, but findType is about how we will interpret the returning address, and matchNumber states what order of occurence we want to rely on.
 
 ```cpp
 DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t matchNumber)
@@ -106,7 +106,7 @@ DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t 
 		{
 			case PointerRelative:
 			{
-				// Returns an address that's found at pattern location offset by the current data position. 
+				// Returns an address that's found at pattern location offset by the current data position
 				int32_t pointer = 0;
 				memcpy(&pointer, m_data + i, sizeof(int));
 
@@ -114,7 +114,7 @@ DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t 
 			}
 			case PointerRelativeLast4:
 			{
-				// Returns an address that's found at pattern location offset by the last 4 bytes of the pattern.
+				// Returns an address that's found at pattern location offset by the last 4 bytes of the pattern
 				int32_t pointer = 0;
 				memcpy(&pointer, m_data + i + strlen(szMask), sizeof(int));
 
@@ -122,7 +122,7 @@ DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t 
 			}
 			case PointerAbsolute:
 			{
-				// Returns an absolute address that's found at pattern location.
+				// Returns an absolute address that's found at pattern location
 				int32_t pointer = 0;
 				memcpy(&pointer, m_data + i, sizeof(int));
 
@@ -130,7 +130,7 @@ DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t 
 			}
 			default:
 			{
-				// Returns the absolute address of the found pattern.
+				// Returns the absolute address of the found pattern
 				return m_baseAddress + i;
 			}
 		}
