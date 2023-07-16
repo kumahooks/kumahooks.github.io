@@ -1,9 +1,9 @@
 ---
-title: Achieving Address Stability in Binary Hooking
+title: Address Stability
 description: Explanation and PoF of pattern matching techniques
 ---
 
-# Achieving Address Stability in Binary Hooking
+# Address Stability
 
 ## The Problem
 Okay, so you're into reverse engineering. You found a cool function, maybe you're writing a cheat for a game, or maybe you were just poking around a binary. Writing a solution that will leverage whatever information you found is somewhat pointless: if you want to change parts of code in a binary, you will quickly notice that it's not easily accessible at the same address you initially stumbled upon.
