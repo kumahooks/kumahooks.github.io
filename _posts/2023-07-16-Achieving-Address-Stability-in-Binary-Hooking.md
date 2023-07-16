@@ -1,6 +1,6 @@
 ---
 title: Address Stability
-description: Explanation and PoF of pattern matching techniques
+description: Explanation and PoC of pattern matching techniques
 ---
 
 # Address Stability
