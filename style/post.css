@@ -1,5 +1,6 @@
 * {
 	scrollbar-color: #4e5151 #2b2d2d;
+	background-color:#000000;
 }
 
 html {
@@ -11,7 +12,6 @@ html {
 	letter-spacing:3px;
 	-webkit-font-smoothing:none;
 
-	position: absolute;
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
