@@ -18,7 +18,7 @@ Think about it: Each page that sticks out corresponds to a Y coordinate, with th
 I'm using `PyMuPDF` to read the drawn lines on each page, and then `matplotlib` to visualize the vertical lines we create once each page is folded.
 
 For starters, I wanted to see if I could properly see the lines of a page, so I wrote a quick code to prove my theory:
-```py
+```python
 import pymupdf
 
 doc = pymupdf.open("Etiquette_Book.pdf")
