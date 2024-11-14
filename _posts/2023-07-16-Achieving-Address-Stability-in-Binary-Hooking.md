@@ -8,7 +8,7 @@ description: Explanation and PoC of pattern matching techniques
 ## The Problem
 Okay, so you're into reverse engineering. You found a cool function, maybe you're writing a cheat for a game, or maybe you were just poking around a binary. Writing a solution that will leverage whatever information you found is somewhat pointless: if you want to change parts of code in a binary, you will quickly notice that it's not easily accessible at the same address you initially stumbled upon.
 
-One reason behind this hurdle is a security mechanism known as Address Space Layout Randomization (ASLR) which may be enabled when a program is compiled. ASLR introduces a level of unpredictability by randomizing the base addresses of modules within a process's address space. As a result, each time the binary is loaded, the addresses of functions and other code segments can vary. This dynamic nature makes it impractical to hardcode addresses when attempting to hook and modify functions within a binary. Furthermore, recompiling the binary can introduce alterations in the code structure, leading to changes in the addresses of critical functions. Consequently, relying on hard-coded addresses becomes impractical and unreliable, as they may no longer correspond to the correct function locations.
+One reason behind this is a security mechanism known as Address Space Layout Randomization (ASLR) which may be enabled when a program is compiled. ASLR introduces a level of unpredictability by randomizing the base addresses of modules within a process's address space. As a result, each time the binary is loaded, the addresses of functions and other code segments can vary. This dynamic nature makes it impractical to hardcode addresses when attempting to hook and modify functions within a binary. Furthermore, recompiling the binary can introduce alterations in the code structure, leading to changes in the addresses of critical functions. Consequently, relying on hard-coded addresses becomes impractical and unreliable, as they may no longer correspond to the correct function locations.
 
 But fear not! There's a solution to this problem: pattern matching. By employing pattern matching techniques, we can dynamically locate the target function within the binary's memory, regardless of its randomized address. This approach allows us to achieve what we desire — consistent and reliable function hooking.
 
@@ -24,10 +24,8 @@ First, we utilize the `GetSectionHeaderInfo` function to retrieve valuable infor
 ```cpp
 bool GetSectionHeaderInfo(LPCSTR moduleName, LPCSTR sectionName, PIMAGE_SECTION_HEADER& dest)
 {
-    // Retrieve the base address of the module
+    // Base address of the module
     const DWORD_PTR dwBaseAddress = reinterpret_cast<DWORD_PTR>(GetModuleHandle(moduleName));
-
-    // Return false if the base address is NULL
     if (dwBaseAddress == NULL)
         return false;
 
@@ -53,7 +51,6 @@ bool GetSectionHeaderInfo(LPCSTR moduleName, LPCSTR sectionName, PIMAGE_SECTION_
         sectionCount++;
     }
 
-    // Return false if the section is not found
     return false;
 }
 ```
@@ -136,7 +133,6 @@ DWORD_PTR Pattern::Find(LPCSTR bMask, LPCSTR szMask, FindType findType, int32_t 
 		}
 	}
 
-	// Return NULL if the target pattern is not found
 	return NULL;
 }
 ```
@@ -186,6 +182,5 @@ DWORD WINAPI MainThread(LPVOID param)
 
 
 ## And there it is
-In the realm of reverse engineering and binary hooking, ensuring address stability is a fundamental challenge. The dynamic nature of address variations caused by factors like ASLR and code recompilation makes it impractical to rely on hard-coded addresses. By dynamically locating the target function within the binary's memory, we can reliably hook and modify functions, regardless of address variations.
-
+By dynamically locating the target function within the binary's memory, we can reliably hook and modify functions, regardless of address variations.
 I might give detouring a deeper focus in a next post, sooo... yeah :)
