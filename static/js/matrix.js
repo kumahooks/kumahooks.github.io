@@ -90,14 +90,14 @@ class MatrixColumn {
 		const color = Math.random() < this.#brightnessChance ? 
 			ColorUtils.changeBrightness(this.#color, 0.5) : 
 			this.#color;
-		
+
 		const element = new MatrixElement(
 			"matrix-character",
 			this.childCount * this.#fontSize,
 			color,
 			char
 		);
-		
+
 		this.#column.appendChild(element.element);
 	}
 }
@@ -175,12 +175,12 @@ class Matrix {
 			this.#sentenceX = Math.floor(
 				(this.#gridX / CONFIG.FONT_SIZE / 2) - CONFIG.SENTENCE.length / 2
 			);
-			
+
 			// Clean up existing columns
 			this.#columns.forEach(column => column.element.remove());
 			this.#columns = [];
 			this.#ignoredColumns.clear();
-			
+
 			// Reinitialize
 			this.#initialize();
 		}, { passive: true });
@@ -207,7 +207,7 @@ class Matrix {
 		if (this.#ignoredColumns.has(x)) return;
 
 		const column = this.#columns[x];
-		
+
 		// Initialize new column
 		if (column.childCount === 0) {
 			if (this.#ignoredColumns.size === CONFIG.SENTENCE.length) return;
@@ -219,7 +219,7 @@ class Matrix {
 		if (x >= this.#sentenceX && x < this.#sentenceX + CONFIG.SENTENCE.length) {
 			const bottom = column.bottomPosition;
 			const midPoint = Math.floor(this.#gridY / CONFIG.FONT_SIZE / 2);
-			
+
 			if (Math.floor(bottom / CONFIG.FONT_SIZE) === midPoint) {
 				this.#createSentenceElement(x, x - this.#sentenceX);
 				return;
@@ -230,7 +230,7 @@ class Matrix {
 		if (column.childCount > 0) {
 			const bottom = column.bottomPosition;
 			const threshold = this.#gridY + (CONFIG.CLEANUP_THRESHOLD * CONFIG.FONT_SIZE);
-			
+
 			if (bottom >= threshold) {
 				column.clear();
 				return;
