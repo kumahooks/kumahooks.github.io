@@ -1,10 +1,10 @@
 section#about a {
-    color: #d2738a;
-    margin: 0px;
-    padding: 0px;
-    font-size: 10px;
-    letter-spacing: 6px;
-    animation: blink 2s ease-in-out infinite;
+	color: #d2738a;
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+	letter-spacing: 6px;
+	animation: blink 2s ease-in-out infinite;
 }
 
 section#about h1 { 
