@@ -1,0 +1,137 @@
+* {
+	scrollbar-color: #4e5151 #2b2d2d;
+}
+
+html, body {
+	background-color:#000000;
+	overflow: scroll !important;
+}
+
+@keyframes blink {
+	50% {
+		color: #d2738a;
+		text-shadow: #d2738a 1px 4px 5px;
+	}
+}
+
+hr {
+	border-color: #c1b492;
+	height: 1px;
+	border-style: groove;
+	box-shadow: none;
+	border-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	color: #c1b492;
+	font-size: 2.0rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	letter-spacing:3px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+	animation: blink 3s ease-in-out infinite;
+}
+
+h3 {
+	color: #c1b492;
+	font-size: 1.6rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	letter-spacing:3px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+	animation: blink 3s ease-in-out infinite;
+}
+
+h4 {
+	color: #c1b492;
+	font-size: 1.2rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	letter-spacing:3px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+	animation: blink 3s ease-in-out infinite;
+}
+
+h1.ptitle { 
+	color:#c1b492;
+	margin-bottom: 0px;
+	font-size: 2.25rem;
+	animation: blink 3s ease-in-out infinite;
+}
+
+h2.ptitle {
+	color: #c1b492;
+	font-size: 0.8rem;
+	margin-top: 0px;
+	margin-bottom: -11px;
+	letter-spacing:3px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+	animation: blink 3s ease-in-out infinite;
+}
+
+hr#ptitle {
+	display: inline-block;
+	width: 206px;
+}
+
+li, p {
+	color: #c1b492;
+	padding: 0px;
+	font-size: 0.75rem;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+}
+
+a {
+	color: #d2738a;
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	letter-spacing: 5px;
+}
+
+a:visited {
+	color: #d2738a;
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	letter-spacing: 5px;
+}
+
+div#contentblock {
+	max-width: 100%;
+	max-block-size: 100%;
+	max-inline-size: 100%;
+}
+
+pre {
+	overflow-x: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	max-width: 100%;
+	background: #18181a !important;
+	border: 1px solid #18181c !important;
+	padding: 1em;
+}
+
+pre::-webkit-scrollbar {
+	display: none;
+}
+
+pre code {
+	padding: 0 !important;
+	border: none !important;
+}
+
+code:not(.highlight code) {
+	background-color: #18181a !important;
+	color: #c1b492 !important;
+	padding: 2px 4px !important;
+	border: 1px solid #18181c !important;
+}
