@@ -1,4 +1,4 @@
-function choose_logo() {
+function chooseLogo() {
 	const isGif = Math.random() < 0.5;
 	const logoIndex = Math.floor(Math.random() * 1) + 1;
 	const extension = isGif ? 'gif' : 'png';
@@ -6,5 +6,5 @@ function choose_logo() {
 }
 
 window.onload = function () {
-	choose_logo();
+	chooseLogo();
 };

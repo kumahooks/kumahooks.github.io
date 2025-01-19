@@ -5,11 +5,11 @@ draft: false
 ---
 
 After using Jekyll for this blog, I decided to migrate to Hugo, and I was very surprised by how straightforward it was.
-Hugo's content structure is somewhat similat to Jekyll, which of course helped with the transition. Both uses markdown, metadatas and a simple structure for posts and pages. The key difference is relying on Github Actions for deployment, but even that all it took was a copy and paste solution from Hugo's documentation.
+Hugo's content structure is somewhat similar to Jekyll, which of course helped with the transition. Both uses markdown, metadatas and a simple structure for posts and pages. The key difference is relying on Github Actions for deployment, but even then all it took was a copy and paste solution from Hugo's documentation.
 
-With this change, I also took the opportunity to create templates for my styling and basic html structure. I had some problems because I'm goofy, but once I debugged a little bit, everything worked flawlessly. I've also taken the opportunity to stop using a third party syntax highlighter, for the built-in markup Hugo offers. I've never been very fond of the way my code syntax looked with the previous solution, but now I feel it's pretty decent. For example, the random logo generation code my index page uses:
+With this change, I also took the opportunity to create templates for my styling and basic html structure. I had some problems because I'm goofy, but once I debugged a little bit, everything worked flawlessly. I've also taken the opportunity to stop using a third party syntax highlighter, for the built-in markup Hugo offers. I've never been very fond of the way my code syntax looked like with the previous solution, but now I feel it's pretty decent. For example:
 ```js
-function choose_logo() {
+function chooseLogo() {
 	const isGif = Math.random() < 0.5;
 	const logoIndex = Math.floor(Math.random() * 1) + 1;
 	const extension = isGif ? 'gif' : 'png';
@@ -17,7 +17,7 @@ function choose_logo() {
 }
 
 window.onload = function () {
-	choose_logo();
+	chooseLogo();
 };
 ```
 
