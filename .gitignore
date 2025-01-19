@@ -1,0 +1,10 @@
+/public/
+/resources/
+*.exe
+.hugo_build.lock
+
+.DS_Store
+Thumbs.db
+
+*.tmp
+*.bak

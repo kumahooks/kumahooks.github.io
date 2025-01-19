@@ -1,0 +1,87 @@
+section#index a#posts, a#rice, a#contact, a#about {
+    color: #d2738a;
+    padding-left: 5px;
+    padding-right: 11px;
+}
+
+section#index h1 { 
+	color:#c1b492;
+	margin-bottom: 10px;
+	animation: blink 3s ease-in-out infinite;
+}
+	
+section#index hr {
+	border-color: #c1b492;
+	display: inline-block;
+	width: 190px;
+	height: 1px;
+	border-style: groove;
+	box-shadow: none;
+	border-bottom: 0px;
+	margin-top: -5px;
+	margin-bottom: 15px;
+}
+
+section#index h2 {
+	color: #c1b492;
+	font-size: 11px;
+	margin-top: -15px;
+	letter-spacing:3px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+	animation: blink 3s ease-in-out infinite;
+}
+
+section#index h3 {
+	color: #d2738a;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-family: Times, "Times New Roman", serif;
+	font-weight: normal;
+}
+
+/* box */
+section#index #waifus {
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	-webkit-animation-duration: 3.0s;
+	animation-duration: 3.0s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: floatUp;
+	animation-name: floatUp;
+	-webkit-animation-timing-function: cubic-bezier(0, 0.71, 0.29, 1);
+	animation-timing-function: cubic-bezier(0, 0.71, 0.29, 1);
+	border-radius: 24px;
+	display: inline-block;
+	height: 240px;
+	width: 240px;
+	margin-bottom: 5px;
+	position: relative;
+	vertical-align: top;
+	box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 5px 10px rgba(100, 100, 100, 0.3), 0 1px 1px rgba(100, 100, 100, 0.3);
+}
+
+section#index #waifupic { height: 220px; margin-top: 19px; border-radius: 13%; }
+section#index #eye { margin-top: 0px; margin-bottom: -10px; }
+
+/* animation */
+@keyframes floatUp {
+	0% {
+		opacity: 0;
+		box-shadow: 0 0 0 rgba(50, 50, 50, 0.25), 0 0 0 rgba(50, 50, 50, 0.25), 0 0 0 rgba(50, 50, 50, 0.25);
+		-webkit-transform: scale(0.86);
+		transform: scale(0.86);
+	}
+	25% { opacity: 100; }
+	67% {
+		box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 5px 10px rgba(100, 100, 100, 0.3), 0 1px 1px rgba(100, 100, 100, 0.3);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	100% {
+		box-shadow: 0 0 0 rgba(100, 100, 100, 0.4), 0 5px 10px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(100, 100, 100, 0.4);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
