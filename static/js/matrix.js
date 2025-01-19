@@ -1,158 +1,245 @@
-function change_brightness(hex_color, percentage)
-{
-	// Extract red, green, and blue values from hex color
-	let red = parseInt(hex_color.slice(1, 3), 16);
-	let green = parseInt(hex_color.slice(3, 5), 16);
-	let blue = parseInt(hex_color.slice(5, 7), 16);
+const CONFIG = {
+	FONT_SIZE: 14,
+	BASE_COLOR: "#d2738a",
+	CHAR_SET: "0123456789abcdefghijklmnopqrstuvwxyz$+*/=%\"'#&-(),.;:?!\\|{}<>[]^~",
+	COLUMN_CHANCE: 0.015,
+	BRIGHTNESS_CHANCE: 0.3,
+	SENTENCE: "Let's all love Lain!",
+	FRAME_RATE: 30,
+	COLUMN_SPACING: 2,
+	CLEANUP_THRESHOLD: 10
+};
 
-	// Adjust intensity of red, green, and blue values
-	red = Math.round(red * percentage);
-	green = Math.round(green * percentage);
-	blue = Math.round(blue * percentage);
-
-	// Convert red, green, and blue values back to hex
-	hex = "#" + ((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1);
-
-	return hex;
-}
-
-class Matrix
-{
-	constructor()
-	{
-		this.grid_x = window.innerWidth;
-		this.grid_y = window.innerHeight;
-
-		// Config
-		this.fontSize = 14;
-		this.color = "#d2738a";
-		this.char_set = "0123456789abcdefghijklmnopqrstuvwxyz$+*/=%\"'#&-(),.;:?!\\|{}<>[]^~";
-		this.column_chance = 0.015; // Chance to start raining a column
-		this.brightness_chance = 0.3 // Chance to change a character's brightness
-
-		// Columns
-		this.columns = [];
-		this.ignored_columns = [];
-		this.create_columns();
-
-		// Sentence
-		this.sentence = "Let's all love Lain!";
-		this.sentence_x = Math.floor(((this.grid_x / this.fontSize) / 2) - this.sentence.length/2);
+class ColorUtils {
+	static changeBrightness(hexColor, percentage) {
+		const rgb = ColorUtils.hexToRgb(hexColor);
+		const adjustedRgb = rgb.map(value => Math.round(value * percentage));
+		return ColorUtils.rgbToHex(adjustedRgb);
 	}
 
-	create_sentence(i)
-	{
-		let x = this.sentence_x;
-		let y = (this.grid_y) / 2;
-		let column = this.columns[i];
-		let element = document.createElement("div");
-		element.className = "sentence-character";
-		element.style.position = "absolute";
-		element.style.top = `${y}px`;
-		element.style.color = "#ffffff";
-		element.style.fontFamily = "Times, Times New Roman, serif";
-		element.innerHTML = this.sentence[i - this.sentence_x];
-
-		this.clear_column(column);
-		this.ignored_columns.push(i);
-		column.appendChild(element);
+	static hexToRgb(hex) {
+		return [
+			parseInt(hex.slice(1, 3), 16),
+			parseInt(hex.slice(3, 5), 16),
+			parseInt(hex.slice(5, 7), 16)
+		];
 	}
 
-	create_columns()
-	{
-		this.columns = []
-		for (let x = 0; x < this.grid_x / this.fontSize; ++x) {
-			let column = document.createElement("div");
-			column.className = "matrix-column";
-			column.style.position = "absolute";
-			column.style.left = `${x * this.fontSize}px`;
-			document.body.appendChild(column);
-			this.columns.push(column);
-		}
-	}
-
-	clear_column(column)
-	{
-		while (column.children.length > 0) column.removeChild(column.firstChild);
-	}
-
-	create_element(column)
-	{
-		// Add new character
-		let character = this.char_set.charAt(Math.floor(Math.random() * this.char_set.length));
-		let element = document.createElement("div");
-		element.className = "matrix-character";
-		element.style.position = "absolute";
-		element.style.top = `${column.children.length * this.fontSize}px`;
-
-		let hex = this.color;
-		// Randomize brightness of a few characters
-		if (Math.random() < this.brightness_chance) {
-			hex = change_brightness(hex, 0.5);
-		}
-
-		element.style.color = hex;
-
-		element.innerHTML = character;
-		return element;
-	}
-
-	draw() 
-	{
-		// Loop through the columns
-		for (let x = 0; x < this.grid_x / this.fontSize; ++x) {
-			// Check if this column isn't being ignored
-			if (this.ignored_columns.includes(x)) continue;
-
-			let column = this.columns[x];
-
-			// Decide rather it will create a column there or not
-			if (column.children.length == 0) {
-				if (this.ignored_columns.length == this.sentence.length) {
-					continue;
-				}
-
-				if (Math.random() > this.column_chance) continue;
-				// Avoiding two equal columns side to side
-				x += 2;
-			}
-
-			// Check if the bottom character has reached the middle of the screen
-			if (x >= this.sentence_x && x < this.sentence_x + this.sentence.length) {
-				if (column.children.length > 0) {
-					let bottomCharacter = column.children[column.children.length - 1];
-					let bottom = parseInt(bottomCharacter.style.top) + this.fontSize;
-
-					if (Math.floor(bottom/this.fontSize) == Math.floor((this.grid_y/this.fontSize)/2)) {
-						this.create_sentence(x);
-						continue;
-					}
-				}
-			}
-
-			// Check if the bottom character has reached the bottom of the screen
-			if (column.children.length > 0) {
-				let bottomCharacter = column.children[column.children.length - 1];
-				let bottom = parseInt(bottomCharacter.style.top) + this.fontSize;
-
-				// Giving some time before it deletes itself
-				if (bottom/this.fontSize >= this.grid_y/this.fontSize + 10) {
-					this.clear_column(column);
-					continue;
-				}
-			}
-
-			// Add new character
-			column.appendChild(this.create_element(column));
-		}
+	static rgbToHex([r, g, b]) {
+		return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 	}
 }
 
-let matrix = new Matrix();
+class MatrixElement {
+	#element;
 
-function update() {
-	matrix.draw();
-	setTimeout(update, 45);
+	constructor(className, top, color, content) {
+		this.#element = document.createElement("div");
+		this.#element.className = className;
+		this.#element.style.position = "absolute";
+		this.#element.style.top = `${top}px`;
+		this.#element.style.color = color;
+		this.#element.innerHTML = content;
+	}
+
+	get element() {
+		return this.#element;
+	}
 }
 
-update();
+class MatrixColumn {
+	#column;
+	#fontSize;
+	#color;
+	#charSet;
+	#brightnessChance;
+
+	constructor(x, fontSize, color, charSet, brightnessChance) {
+		this.#column = document.createElement("div");
+		this.#column.className = "matrix-column";
+		this.#column.style.position = "absolute";
+		this.#column.style.left = `${x * fontSize}px`;
+		this.#fontSize = fontSize;
+		this.#color = color;
+		this.#charSet = charSet;
+		this.#brightnessChance = brightnessChance;
+	}
+
+	get element() {
+		return this.#column;
+	}
+
+	get childCount() {
+		return this.#column.children.length;
+	}
+
+	get bottomPosition() {
+		if (this.childCount === 0) return 0;
+		const bottomChild = this.#column.children[this.childCount - 1];
+		return parseInt(bottomChild.style.top) + this.#fontSize;
+	}
+
+	clear() {
+		while (this.#column.firstChild) {
+			this.#column.removeChild(this.#column.firstChild);
+		}
+	}
+
+	addCharacter() {
+		const char = this.#charSet[Math.floor(Math.random() * this.#charSet.length)];
+		const color = Math.random() < this.#brightnessChance ? 
+			ColorUtils.changeBrightness(this.#color, 0.5) : 
+			this.#color;
+		
+		const element = new MatrixElement(
+			"matrix-character",
+			this.childCount * this.#fontSize,
+			color,
+			char
+		);
+		
+		this.#column.appendChild(element.element);
+	}
+}
+
+class Matrix {
+	#columns;
+	#ignoredColumns;
+	#gridX;
+	#gridY;
+	#sentenceX;
+	#animationFrame;
+
+	constructor() {
+		this.#gridX = window.innerWidth;
+		this.#gridY = window.innerHeight;
+		this.#columns = [];
+		this.#ignoredColumns = new Set();
+		this.#sentenceX = Math.floor(
+			(this.#gridX / CONFIG.FONT_SIZE/2) - CONFIG.SENTENCE.length/2
+		);
+
+		this.#initialize();
+		this.#setupResizeHandler();
+	}
+
+	start() {
+		let lastUpdate = 0;
+		const frameInterval = 1000 / CONFIG.FRAME_RATE;
+
+		const update = (timestamp) => {
+			const elapsed = timestamp - lastUpdate;
+			
+			if (elapsed >= frameInterval) {
+				const columnCount = Math.floor(this.#gridX / CONFIG.FONT_SIZE);
+				for (let x = 0; x < columnCount; x++) {
+					this.#updateColumn(x);
+				}
+
+				lastUpdate = timestamp;
+			}
+			
+			this.#animationFrame = requestAnimationFrame(update);
+		};
+
+		this.#animationFrame = requestAnimationFrame(update);
+	}
+
+	stop() {
+		if (this.#animationFrame) {
+			cancelAnimationFrame(this.#animationFrame);
+		}
+	}
+
+	#initialize() {
+		const columnCount = Math.floor(this.#gridX / CONFIG.FONT_SIZE);
+		
+		for (let x = 0; x < columnCount; x++) {
+			const column = new MatrixColumn(
+				x,
+				CONFIG.FONT_SIZE,
+				CONFIG.BASE_COLOR,
+				CONFIG.CHAR_SET,
+				CONFIG.BRIGHTNESS_CHANCE
+			);
+
+			document.body.appendChild(column.element);
+			this.#columns.push(column);
+		}
+	}
+
+	#setupResizeHandler() {
+		window.addEventListener('resize', () => {
+			this.#gridX = window.innerWidth;
+			this.#gridY = window.innerHeight;
+			this.#sentenceX = Math.floor(
+				(this.#gridX / CONFIG.FONT_SIZE / 2) - CONFIG.SENTENCE.length / 2
+			);
+			
+			// Clean up existing columns
+			this.#columns.forEach(column => column.element.remove());
+			this.#columns = [];
+			this.#ignoredColumns.clear();
+			
+			// Reinitialize
+			this.#initialize();
+		}, { passive: true });
+	}
+
+	#createSentenceElement(x, index) {
+		const y = this.#gridY / 2;
+		const element = new MatrixElement(
+			"sentence-character",
+			y,
+			"#ffffff",
+			CONFIG.SENTENCE[index]
+		);
+
+		element.element.style.fontFamily = "Times, Times New Roman, serif";
+		
+		const column = this.#columns[x];
+		column.clear();
+		this.#ignoredColumns.add(x);
+		column.element.appendChild(element.element);
+	}
+
+	#updateColumn(x) {
+		if (this.#ignoredColumns.has(x)) return;
+
+		const column = this.#columns[x];
+		
+		// Initialize new column
+		if (column.childCount === 0) {
+			if (this.#ignoredColumns.size === CONFIG.SENTENCE.length) return;
+			if (Math.random() > CONFIG.COLUMN_CHANCE) return;
+			x += CONFIG.COLUMN_SPACING;
+		}
+
+		// Check for sentence creation
+		if (x >= this.#sentenceX && x < this.#sentenceX + CONFIG.SENTENCE.length) {
+			const bottom = column.bottomPosition;
+			const midPoint = Math.floor(this.#gridY / CONFIG.FONT_SIZE / 2);
+			
+			if (Math.floor(bottom / CONFIG.FONT_SIZE) === midPoint) {
+				this.#createSentenceElement(x, x - this.#sentenceX);
+				return;
+			}
+		}
+
+		// Check for column cleanup
+		if (column.childCount > 0) {
+			const bottom = column.bottomPosition;
+			const threshold = this.#gridY + (CONFIG.CLEANUP_THRESHOLD * CONFIG.FONT_SIZE);
+			
+			if (bottom >= threshold) {
+				column.clear();
+				return;
+			}
+		}
+
+		column.addCharacter();
+	}
+}
+
+const matrix = new Matrix();
+matrix.start();
