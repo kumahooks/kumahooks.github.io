@@ -1,36 +1,34 @@
 {{ define "styles" }}
-<link rel="stylesheet" href="/style/about.css">
+	<link rel="stylesheet" href="/style/about.css">
 {{ end }}
 
 {{ define "section-id" }}about{{ end }}
 
 {{ define "main" }}
-<h1 class="title">{{ .Title }}</h1>
+	<h1 class="title">{{ .Title }}</h1>
 
-<div id="separation" class="hr">
-	<hr />
-</div>
+	<div id="separation" class="hr">
+		<hr/>
+	</div> 
 
-<h2 id="love_lain" class="title">⌈Everyone's connected⌋</h2>
+	<h2 id="love_lain" class="title">⌈Everyone's connected⌋</h2>
 
-<h3 id="aboutme">
-	<p>
-		Hi! I am Kuma, also going for Meryl and Bear.
-		<br>
-		Software engineer by day, wannabe hacker by night - focusing primarily on reverse-engineering games and malware.
-		<br>
-		Most stuff I know are self-taught, which is probably why I suck a lot.
-		<br>
-		As you probably noticed, I am a lot into <a href="{{ " lain" | relURL }}">Lain</a>, CTFs, music, animu, mangos,
-		novels, and a few other stuff.
-		<br><br><br>
-		Places you can find me: <a href="mailto:kuma@insiberia.net">e-mail</a> | <a
-			href="https://github.com/kumahooks">github</a> | <a href="https://www.last.fm/user/hadakakuma">last.fm</a>
-		<br>
-		I do not have any social media aside from the ones listed in this page.
-		<br>
-		<a href="{{ " songs" | relURL }}">This</a> is a list of songs I highly recommend anyone listening to! :)
-		<br><br><br><br>
-	</p>
-</h3>
+	<h3 id="aboutme">
+		<p>
+			Hi! I am Kuma, also going for Meryl and Bear. 
+			<br>
+			Software engineer by day, wannabe hacker by night - focusing primarily on reverse-engineering games and malware.
+			<br>
+			Most stuff I know are self-taught, which is probably why I suck a lot.
+			<br>
+			As you probably noticed, I am a lot into <a href="{{ "lain" | relURL }}">Lain</a>, CTFs, music, animu, mangos, novels, and a few other stuff. 
+			<br><br><br>
+			Places you can find me: <a href="mailto:kuma@insiberia.net">e-mail</a> | <a href="https://github.com/kumahooks">github</a> | <a href="https://www.last.fm/user/hadakakuma">last.fm</a>
+			<br>
+			I do not have any social media aside from the ones listed in this page.
+			<br>
+			<a href="{{ "songs" | relURL }}">This</a> is a list of songs I highly recommend anyone listening to! :)
+			<br><br><br><br>
+		</p>
+	</h3>
 {{ end }}

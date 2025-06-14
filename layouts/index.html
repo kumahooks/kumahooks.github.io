@@ -1,9 +1,9 @@
 {{ define "styles" }}
-<link rel="stylesheet" href="/style/index.css">
+	<link rel="stylesheet" href="/style/index.css">
 {{ end }}
 
 {{ define "scripts" }}
-<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
 {{ end }}
 
 {{ define "hero-class" }}is-fullheight{{ end }}
@@ -11,23 +11,23 @@
 {{ define "section-id" }}index{{ end }}
 
 {{ define "main" }}
-<p id="waifus">
-	<img id="waifupic" class="logo" src="/images/0.png">
-</p>
+	<p id="waifus">
+		<img id="waifupic" class="logo" src="/images/0.png">
+	</p>
 
-<h1 class="title">{{ .Site.Title }}</h1>
+	<h1 class="title">{{ .Site.Title }}</h1>
 
-<div id="separation" class="hr">
-	<hr />
-</div>
+	<div id="separation" class="hr">
+		<hr/>
+	</div>
 
-<h2 id="love_lain" class="title">⌈Let's All Love Lain⌋</h2>
+	<h2 id="love_lain" class="title">⌈Let's All Love Lain⌋</h2>
 
-<h3 id="links">
-	<a id="posts" href="{{ " posts" | relURL }}">Articles</a><span>|</span>
-	<a id="rice" href="{{ " rice" | relURL }}">Rice</a><span>|</span>
-	<a id="about" href="{{ " about" | relURL }}">About</a>
-</h3>
+	<h3 id="links">
+		<a id="posts" href="{{ "posts" | relURL }}">Articles</a><span>|</span>
+		<a id="rice" href="{{ "rice" | relURL }}">Rice</a><span>|</span>
+		<a id="about" href="{{ "about" | relURL }}">About</a>
+	</h3>
 {{ end }}
 
 {{ define "footer" }}owo{{ end }}

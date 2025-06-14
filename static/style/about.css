@@ -7,8 +7,8 @@ section#about a {
 	animation: blink 2s ease-in-out infinite;
 }
 
-section#about h1 {
-	color: #c1b492;
+section#about h1 { 
+	color:#c1b492;
 	margin-bottom: 10px;
 	animation: blink 3s ease-in-out infinite;
 }
@@ -29,7 +29,7 @@ section#about h2 {
 	color: #c1b492;
 	font-size: 11px;
 	margin-top: -15px;
-	letter-spacing: 3px;
+	letter-spacing:3px;
 	font-family: Times, "Times New Roman", serif;
 	font-weight: normal;
 	animation: blink 3s ease-in-out infinite;
@@ -38,7 +38,7 @@ section#about h2 {
 section#about h3 {
 	color: #c1b492;
 	margin-top: 50px;
-	letter-spacing: 3px;
+	letter-spacing:3px;
 	font-family: Times, "Times New Roman", serif;
 	font-weight: normal;
 }

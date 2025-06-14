@@ -7,13 +7,13 @@ const CONFIG = {
 	SENTENCE: "Let's all love Lain!",
 	FRAME_RATE: 30,
 	COLUMN_SPACING: 2,
-	CLEANUP_THRESHOLD: 10,
+	CLEANUP_THRESHOLD: 10
 };
 
 class ColorUtils {
 	static changeBrightness(hexColor, percentage) {
 		const rgb = ColorUtils.hexToRgb(hexColor);
-		const adjustedRgb = rgb.map((value) => Math.round(value * percentage));
+		const adjustedRgb = rgb.map(value => Math.round(value * percentage));
 		return ColorUtils.rgbToHex(adjustedRgb);
 	}
 
@@ -21,7 +21,7 @@ class ColorUtils {
 		return [
 			parseInt(hex.slice(1, 3), 16),
 			parseInt(hex.slice(3, 5), 16),
-			parseInt(hex.slice(5, 7), 16),
+			parseInt(hex.slice(5, 7), 16)
 		];
 	}
 
@@ -86,18 +86,16 @@ class MatrixColumn {
 	}
 
 	addCharacter() {
-		const char =
-			this.#charSet[Math.floor(Math.random() * this.#charSet.length)];
-		const color =
-			Math.random() < this.#brightnessChance
-				? ColorUtils.changeBrightness(this.#color, 0.5)
-				: this.#color;
+		const char = this.#charSet[Math.floor(Math.random() * this.#charSet.length)];
+		const color = Math.random() < this.#brightnessChance ? 
+			ColorUtils.changeBrightness(this.#color, 0.5) : 
+			this.#color;
 
 		const element = new MatrixElement(
 			"matrix-character",
 			this.childCount * this.#fontSize,
 			color,
-			char,
+			char
 		);
 
 		this.#column.appendChild(element.element);
@@ -118,7 +116,7 @@ class Matrix {
 		this.#columns = [];
 		this.#ignoredColumns = new Set();
 		this.#sentenceX = Math.floor(
-			this.#gridX / CONFIG.FONT_SIZE / 2 - CONFIG.SENTENCE.length / 2,
+			(this.#gridX / CONFIG.FONT_SIZE/2) - CONFIG.SENTENCE.length/2
 		);
 
 		this.#initialize();
@@ -131,7 +129,7 @@ class Matrix {
 
 		const update = (timestamp) => {
 			const elapsed = timestamp - lastUpdate;
-
+			
 			if (elapsed >= frameInterval) {
 				const columnCount = Math.floor(this.#gridX / CONFIG.FONT_SIZE);
 				for (let x = 0; x < columnCount; x++) {
@@ -140,7 +138,7 @@ class Matrix {
 
 				lastUpdate = timestamp;
 			}
-
+			
 			this.#animationFrame = requestAnimationFrame(update);
 		};
 
@@ -155,14 +153,14 @@ class Matrix {
 
 	#initialize() {
 		const columnCount = Math.floor(this.#gridX / CONFIG.FONT_SIZE);
-
+		
 		for (let x = 0; x < columnCount; x++) {
 			const column = new MatrixColumn(
 				x,
 				CONFIG.FONT_SIZE,
 				CONFIG.BASE_COLOR,
 				CONFIG.CHAR_SET,
-				CONFIG.BRIGHTNESS_CHANCE,
+				CONFIG.BRIGHTNESS_CHANCE
 			);
 
 			document.body.appendChild(column.element);
@@ -171,25 +169,21 @@ class Matrix {
 	}
 
 	#setupResizeHandler() {
-		window.addEventListener(
-			"resize",
-			() => {
-				this.#gridX = window.innerWidth;
-				this.#gridY = window.innerHeight;
-				this.#sentenceX = Math.floor(
-					this.#gridX / CONFIG.FONT_SIZE / 2 - CONFIG.SENTENCE.length / 2,
-				);
+		window.addEventListener('resize', () => {
+			this.#gridX = window.innerWidth;
+			this.#gridY = window.innerHeight;
+			this.#sentenceX = Math.floor(
+				(this.#gridX / CONFIG.FONT_SIZE / 2) - CONFIG.SENTENCE.length / 2
+			);
 
-				// Clean up existing columns
-				this.#columns.forEach((column) => column.element.remove());
-				this.#columns = [];
-				this.#ignoredColumns.clear();
+			// Clean up existing columns
+			this.#columns.forEach(column => column.element.remove());
+			this.#columns = [];
+			this.#ignoredColumns.clear();
 
-				// Reinitialize
-				this.#initialize();
-			},
-			{ passive: true },
-		);
+			// Reinitialize
+			this.#initialize();
+		}, { passive: true });
 	}
 
 	#createSentenceElement(x, index) {
@@ -198,11 +192,11 @@ class Matrix {
 			"sentence-character",
 			y,
 			"#ffffff",
-			CONFIG.SENTENCE[index],
+			CONFIG.SENTENCE[index]
 		);
 
 		element.element.style.fontFamily = "Times, Times New Roman, serif";
-
+		
 		const column = this.#columns[x];
 		column.clear();
 		this.#ignoredColumns.add(x);
@@ -235,8 +229,7 @@ class Matrix {
 		// Check for column cleanup
 		if (column.childCount > 0) {
 			const bottom = column.bottomPosition;
-			const threshold =
-				this.#gridY + CONFIG.CLEANUP_THRESHOLD * CONFIG.FONT_SIZE;
+			const threshold = this.#gridY + (CONFIG.CLEANUP_THRESHOLD * CONFIG.FONT_SIZE);
 
 			if (bottom >= threshold) {
 				column.clear();
@@ -250,4 +243,3 @@ class Matrix {
 
 const matrix = new Matrix();
 matrix.start();
-

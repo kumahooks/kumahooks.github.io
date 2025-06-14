@@ -181,4 +181,3 @@ DWORD WINAPI MainThread(LPVOID param)
 ## And there it is
 By dynamically locating the target function within the binary's memory, we can reliably hook and modify functions, regardless of address variations.
 I might give detouring a deeper focus in a next post, sooo... yeah :)
-
