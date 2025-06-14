@@ -26,3 +26,4 @@ Overall, it took me around three hours to completely transition, and a bit extra
 Anyway, on a side note, it's been harder and harder for me to find time and energy to post more in here. I'm looking forward to this year though - I have some very cool projects in mind I plan to share in future posts.
 
 Let's all love Lain!
+

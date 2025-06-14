@@ -37,7 +37,7 @@ My assumption is quickly proven true when I look for references to the given fun
 ![image](https://user-images.githubusercontent.com/69819027/202642608-0b7b0ccc-a0f4-4d64-9bb6-973c94501dd9.png)
 
 I am not sure if this was intentional (I assume so?) or if it was a problem with my environment or whatnot, but well, that happened. Anyway, this happens because it's trying to find the function at KernelBase but it's at Kernel32 instead.
-The solution is simple, at around the start of `sub_100012F1`, it calls a function `sub_100012DB`, responsible to return at EAX the KernelBase address. 
+The solution is simple, at around the start of `sub_100012F1`, it calls a function `sub_100012DB`, responsible to return at EAX the KernelBase address.
 
 As you can see from the picture below, just nopping the last `MOV EAX,DWORD PTR DS:[EAX]` is enough to make it stop at Kernel32 in the list.
 
@@ -56,3 +56,4 @@ Anyway after running both the .dll and then our code, our execution past the fun
 After running both of the apps with the argument above, `sub_10001000` gives us the flag:
 
 ![image](https://user-images.githubusercontent.com/69819027/202642677-9cbdb3e5-8a54-4f8a-aa38-7d4e93416443.png)
+
