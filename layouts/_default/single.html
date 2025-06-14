@@ -1,5 +1,5 @@
 {{ define "styles" }}
-	<link rel="stylesheet" href="/style/post.css">
+<link rel="stylesheet" href="/style/post.css">
 {{ end }}
 
 {{ define "title" }}{{ .Title }}{{ end }}
@@ -7,15 +7,19 @@
 {{ define "section-id" }}post{{ end }}
 
 {{ define "main" }}
-	<h1 class="ptitle">{{ .Title }}</h1>
-	<h2 class="ptitle">⌈{{ .Date.Format "2006 Jan 2" }}⌋</h2>
-	<div id="separation" class="hr">
-		<hr id="ptitle" />
-	</div>
-	<br><br>
-	<div id="contentblock" style="display: inline-block; text-align: left;">
-		{{ .Content }}
-	</div>
+<h1 class="ptitle">{{ .Title }}</h1>
+
+<h2 class="ptitle">⌈{{ .Date.Format "2006 Jan 2" }}⌋</h2>
+
+<div id="separation" class="hr">
+	<hr id="ptitle" />
+</div>
+
+<br><br>
+
+<div id="contentblock" style="display: inline-block; text-align: left;">
+	{{ .Content }}
+</div>
 {{ end }}
 
 {{ define "return-link" }}{{ "posts" | relURL }}{{ end }}

@@ -1,28 +1,25 @@
 {{ define "styles" }}
-	<link rel="stylesheet" href="/style/rice.css">
-{{ end }}
+<link rel="stylesheet" href="/style/rice.css" />
+{{ end }} {{ define "section-id" }}rice{{ end }} {{ define "main" }}
+<h1 class="title">{{ .Title }}</h1>
 
-{{ define "section-id" }}rice{{ end }}
+<div id="separation" class="hr">
+	<hr />
+</div>
 
-{{ define "main" }}
-	<h1 class="title">{{ .Title }}</h1>
+<h2 id="love_lain" class="title">⌈Present day... Present time!⌋</h2>
 
-	<div id="separation" class="hr">
-		<hr/>
-	</div>
-
-	<h2 id="love_lain" class="title">⌈Present day... Present time!⌋</h2>
-
-	<h3 id="rice">
-		<p>
-			My ricing setup is pretty simple and, to be fair, the only reason I'm making this page is to help myself with future
-			installs :)
-			<br><br>
-			Either way, this is my current (09/05/25) setup:
-			<br>
-			<img src="/images/rice090525.png" alt="Rice Setup" />
-			<br><br>
-			You can find my dotfiles here(TODO: upload my dotfiles).
-		</p>
-	</h3>
+<h3 id="rice">
+	<p>
+		My ricing setup is pretty simple and, to be fair, the only reason I'm making
+		this page is to help myself with future installs :)
+		<br /><br />
+		Either way, this is my current (09/05/25) setup:
+		<br />
+		<img src="/images/rice090525.png" alt="Rice Setup" />
+		<br /><br />
+		You can find my dotfiles
+		<a href="https://github.com/kumahooks/dotfiles">here</a>.
+	</p>
+</h3>
 {{ end }}

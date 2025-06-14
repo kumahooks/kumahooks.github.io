@@ -11,7 +11,7 @@ The challenge simply introduces us with a random text about a dialogue with your
 
 ![image](https://github.com/user-attachments/assets/aaea8e29-3777-4022-b289-be90c417af02)
 
-So it turns out, we are supposed to programmatically fold these pages and see the word that comes out once we do that. This is what intrigued me - how could I even do that?! Visualizing a solution was initially weird and difficult, but once I started thinking more and more about it, it became quite simple really. 
+So it turns out, we are supposed to programmatically fold these pages and see the word that comes out once we do that. This is what intrigued me - how could I even do that?! Visualizing a solution was initially weird and difficult, but once I started thinking more and more about it, it became quite simple really.
 Think about it: Each page that sticks out corresponds to a Y coordinate, with the maximum size being the max height of each page in the book. When we fold along the two lines, only a portion of that Y coordinate would be exposed for each page. If we plot a graph with the vertical lines, showing each part that sticks out, we could potentially form the word in the end. Let's try it, shall we?
 
 ## Tackling the Problem
@@ -146,3 +146,4 @@ The code isn’t great, and I’m not going to bother polishing it just for a wr
 
 I faced some problems with the vertical line plotting at first, especially with this difference in coordinates between each alternate page. I'm also sure there's a much more elegant way to solve this, but hey, when you have a problem that you are that curious to finally solve, any solution that works feels like a victory.
 It feels refreshing to tackle a challenge like that after so long, and despite the solution itself being simple, taking my time to visualize how I would write the word in the end was a very fun process.
+
