@@ -1,0 +1,57 @@
+[
+	{
+		"title": "Duvet",
+		"url": "https://music.youtube.com/watch?v=o7fgFaXKVa0",
+		"type": "song",
+		"author": "bôa",
+		"genre": "Alternative Rock",
+		"runtime": "03:23"
+	},
+	{
+		"title": "Fool",
+		"url": "https://music.youtube.com/watch?v=HUnnxRicDwM",
+		"type": "song",
+		"author": "bôa",
+		"genre": "Alternative Rock",
+		"runtime": "05:06"
+	},
+	{
+		"title": "Twilight",
+		"url": "https://music.youtube.com/watch?v=wPAjvd0Co-Q",
+		"type": "song",
+		"author": "bôa",
+		"genre": "Alternative Rock",
+		"runtime": "03:48"
+	},
+	{
+		"title": "Secret Diary",
+		"url": "https://music.youtube.com/playlist?list=OLAK5uy_lLSOJq5UB5DGbk77wTW9rmkRm0MnR13v8",
+		"type": "album",
+		"author": "College",
+		"genre": "Synthwave",
+		"runtime": "35:18"
+	},
+	{
+		"title": "Lost Kitten",
+		"url": "https://music.youtube.com/watch?v=FK8q-SnaGO4",
+		"type": "song",
+		"author": "Metric",
+		"genre": "Indie Pop",
+		"runtime": "03:17"
+	},
+	{
+		"title": "おじっちゃ",
+		"url": "https://music.youtube.com/watch?v=iiHQnbHMub8",
+		"author": "友川かずき (Kazuki Tomokawa)",
+		"genre": "Avant-Folk",
+		"runtime": "04:31"
+	},
+	{
+		"title": "Become the Warm Jets",
+		"url": "https://music.youtube.com/watch?v=YxwKap-1RBw",
+		"author": "Current Joys",
+		"genre": "Slowcore",
+		"runtime": "05:35"
+	}
+]
+

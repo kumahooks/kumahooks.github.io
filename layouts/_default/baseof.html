@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-		
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
 		<link rel="stylesheet" href="/style/base.css">
 		{{ block "styles" . }}{{ end }}
@@ -16,8 +16,9 @@
 	<body>
 		<section class="hero {{ block "hero-class" . }}{{ end }}" id="{{ block "section-id" . }}{{ end }}">
 			<div class="hero-body">
-				<div class="container has-text-centered" style="max-width: calc(900px - (30px * 2)); word-wrap: break-word;">
+				<div class="container has-text-centered" style="max-width: calc(1000px - (30px * 2)); word-wrap: break-word;">
 					{{ block "main" . }}{{ end }}
+
 					{{ block "footer" . }}
 						<a href="{{ block "return-link" . }}{{ .Site.BaseURL }}{{ end }}">
 							<img id="eye" class="logo" src="/images/wired.gif">
@@ -28,3 +29,4 @@
 		</section>
 	</body>
 </html>
+
