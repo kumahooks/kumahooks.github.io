@@ -1,0 +1,21 @@
+{{ define "styles" }}
+	<link rel="stylesheet" href="/style/songs.css" />
+{{ end }}
+
+{{ define "section-id" }}songs{{ end }}
+
+{{ define "main" }}
+	<h1 class="title">{{ .Title }}</h1>
+
+	<div id="separation" class="hr">
+		<hr />
+	</div>
+
+	<h2 id="love_lain" class="title">⌈Everyone's connected⌋</h2>
+
+	<div id="song-filter" class="song-filter"></div>
+	<div id="song-grid" class="song-grid"></div>
+
+	<script src="/js/songs.js"></script>
+{{ end }}
+
