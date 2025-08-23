@@ -13,11 +13,13 @@
 		{{ block "styles" . }}{{ end }}
 		{{ block "scripts" . }}{{ end }}
 	</head>
+
 	<body>
 		<section class="hero {{ block "hero-class" . }}{{ end }}" id="{{ block "section-id" . }}{{ end }}">
 			<div class="hero-body">
-				<div class="container has-text-centered" style="max-width: calc(1000px - (30px * 2)); word-wrap: break-word;">
+				<div class="container has-text-centered responsive-container">
 					{{ block "main" . }}{{ end }}
+
 					{{ block "footer" . }}
 						<a href="{{ block "return-link" . }}{{ .Site.BaseURL }}{{ end }}">
 							<img id="eye" class="logo" src="/images/wired.gif">
