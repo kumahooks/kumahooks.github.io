@@ -43,10 +43,21 @@ section#songs .state-2 {
 
 section#songs .song-grid {
 	display: grid;
-	gap: 2px;
-	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(2px, 0.3vw, 8px);
 	grid-auto-rows: auto;
-	margin-bottom: 80px;
+	margin-bottom: clamp(60px, 10vh, 100px);
+}
+
+@media (max-width: 1400px) {
+	section#songs .song-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (min-width: 1401px) {
+	section#songs .song-grid {
+		grid-template-columns: repeat(5, 1fr);
+	}
 }
 
 section#songs .song-item {
