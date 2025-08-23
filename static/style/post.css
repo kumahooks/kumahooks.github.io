@@ -3,46 +3,11 @@
 }
 
 html, body {
-	background-color:#000000;
 	overflow: scroll !important;
 }
 
-@keyframes blink {
-	50% {
-		color: #d2738a;
-		text-shadow: #d2738a 1px 4px 5px;
-	}
-}
-
-hr {
-	border-color: #c1b492;
-	height: 1px;
-	border-style: groove;
-	box-shadow: none;
-	border-bottom: 0px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-h2 {
-	color: #c1b492;
-	font-size: 2.0rem;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	letter-spacing:3px;
-	font-family: Times, "Times New Roman", serif;
-	font-weight: normal;
-	animation: blink 3s ease-in-out infinite;
-}
-
 h3 {
-	color: #c1b492;
 	font-size: 1.6rem;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	letter-spacing:3px;
-	font-family: Times, "Times New Roman", serif;
-	font-weight: normal;
 	animation: blink 3s ease-in-out infinite;
 }
 
@@ -57,7 +22,7 @@ h4 {
 	animation: blink 3s ease-in-out infinite;
 }
 
-h1.ptitle { 
+h1.ptitle {
 	color:#c1b492;
 	margin-bottom: 0px;
 	font-size: 2.25rem;
@@ -78,6 +43,7 @@ h2.ptitle {
 hr#ptitle {
 	display: inline-block;
 	width: 206px;
+	margin-top: 14px;
 }
 
 li, p {
@@ -135,3 +101,4 @@ code:not(.highlight code) {
 	padding: 2px 4px !important;
 	border: 1px solid #18181c !important;
 }
+

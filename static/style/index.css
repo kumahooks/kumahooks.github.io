@@ -1,43 +1,16 @@
-section#index a#posts, a#rice, a#contact, a#about {
+section#index a {
 	color: #d2738a;
 	padding-left: 5px;
 	padding-right: 11px;
-}
-
-section#index h1 { 
-	color:#c1b492;
-	margin-bottom: 10px;
-	animation: blink 3s ease-in-out infinite;
-}
-	
-section#index hr {
-	border-color: #c1b492;
-	display: inline-block;
-	width: 190px;
-	height: 1px;
-	border-style: groove;
-	box-shadow: none;
-	border-bottom: 0px;
-	margin-top: -5px;
-	margin-bottom: 15px;
-}
-
-section#index h2 {
-	color: #c1b492;
-	font-size: 11px;
-	margin-top: -15px;
-	letter-spacing:3px;
-	font-family: Times, "Times New Roman", serif;
-	font-weight: normal;
-	animation: blink 3s ease-in-out infinite;
+	font-size: 16px;
+	letter-spacing: 4px;
+	animation: none;
 }
 
 section#index h3 {
 	color: #d2738a;
-	margin-top: 50px;
 	margin-bottom: 50px;
-	font-family: Times, "Times New Roman", serif;
-	font-weight: normal;
+	letter-spacing: 4px;
 }
 
 /* box */
@@ -85,3 +58,4 @@ section#index #eye { margin-top: 0px; margin-bottom: -10px; }
 		transform: scale(1);
 	}
 }
+
