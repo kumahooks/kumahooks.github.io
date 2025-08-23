@@ -17,6 +17,12 @@ html, body {
 	right: 0px;
 }
 
+.responsive-container {
+	max-width: clamp(600px, 60vw, 1200px);
+	word-wrap: break-word;
+	padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
 @keyframes blink {
 	50% {
 		color: #d2738a;
