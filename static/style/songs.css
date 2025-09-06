@@ -10,14 +10,14 @@ section#songs hr {
 	width: 260px;
 }
 
-section#songs .song-filter {
+section#songs .song-filter, .song-type {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
 	margin-bottom: 20px;
 }
 
-section#songs .filter-item {
+section#songs .filter-item, .type-item {
 	padding: 4px 10px;
 	font-size: 10px;
 	letter-spacing: 2px;
@@ -67,7 +67,7 @@ section#songs .song-item {
 	transition: all 0.3s ease;
 	position: relative;
 	overflow: hidden;
-	height: 116px;
+	height: 122px;
 }
 
 section#songs .song-item:hover {
@@ -97,6 +97,7 @@ section#songs .song-title {
 	margin-bottom: 6px;
 	text-transform: lowercase;
 	font-weight: normal;
+	animation: blink 2s ease-in-out infinite;
 }
 
 section#songs .song-meta {
@@ -110,5 +111,6 @@ section#songs .song-item a {
 	text-decoration: none;
 	color: inherit;
 	display: block;
+	animation: none !important;
 }
 

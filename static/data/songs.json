@@ -4,54 +4,245 @@
 		"url": "https://music.youtube.com/watch?v=o7fgFaXKVa0",
 		"type": "song",
 		"author": "bôa",
-		"genre": "Alternative Rock",
-		"runtime": "03:23"
+		"genre": "Alternative Rock"
 	},
 	{
 		"title": "Fool",
 		"url": "https://music.youtube.com/watch?v=HUnnxRicDwM",
 		"type": "song",
 		"author": "bôa",
-		"genre": "Alternative Rock",
-		"runtime": "05:06"
+		"genre": "Alternative Rock"
 	},
 	{
 		"title": "Twilight",
 		"url": "https://music.youtube.com/watch?v=wPAjvd0Co-Q",
 		"type": "song",
 		"author": "bôa",
-		"genre": "Alternative Rock",
-		"runtime": "03:48"
+		"genre": "Alternative Rock"
 	},
 	{
 		"title": "Secret Diary",
 		"url": "https://music.youtube.com/playlist?list=OLAK5uy_lLSOJq5UB5DGbk77wTW9rmkRm0MnR13v8",
 		"type": "album",
 		"author": "College",
-		"genre": "Synthwave",
-		"runtime": "35:18"
+		"genre": "Synthwave"
 	},
 	{
 		"title": "Lost Kitten",
 		"url": "https://music.youtube.com/watch?v=FK8q-SnaGO4",
 		"type": "song",
 		"author": "Metric",
-		"genre": "Indie Pop",
-		"runtime": "03:17"
+		"genre": "Indie Pop"
 	},
 	{
 		"title": "おじっちゃ",
 		"url": "https://music.youtube.com/watch?v=iiHQnbHMub8",
-		"author": "友川かずき (Kazuki Tomokawa)",
-		"genre": "Avant-Folk",
-		"runtime": "04:31"
+		"type": "song",
+		"author": "友川かずき [Kazuki Tomokawa]",
+		"genre": "Avant-Folk"
 	},
 	{
 		"title": "Become the Warm Jets",
 		"url": "https://music.youtube.com/watch?v=YxwKap-1RBw",
+		"type": "song",
 		"author": "Current Joys",
-		"genre": "Slowcore",
-		"runtime": "05:35"
+		"genre": "Slowcore"
+	},
+	{
+		"title": "Rossz csillag alatt született",
+		"url": "https://music.youtube.com/playlist?list=OLAK5uy_ntaQhGGMSHFtDHLpm0LcEaTnq9UmQrBis",
+		"type": "album",
+		"author": "Venetian Snares",
+		"genre": "Breakcore"
+	},
+	{
+		"title": "Detrimentalist",
+		"url": "https://music.youtube.com/playlist?list=OLAK5uy_nwcurtKaMf14WZuOI-7OE3vFVyJkDxB9A",
+		"type": "album",
+		"author": "Venetian Snares",
+		"genre": "Breakcore"
+	},
+	{
+		"title": "The Chocolate Wheelchair Album ",
+		"url": "https://music.youtube.com/playlist?list=OLAK5uy_nleBEchXZrFSRtzFGMEBW6OBGrqK45M0w",
+		"type": "album",
+		"author": "Venetian Snares",
+		"genre": "Breakcore"
+	},
+	{
+		"title": "ひまわり画像",
+		"url": "https://rateyourmusic.com/release/album/%E5%A4%A9%E6%B0%97%E4%BA%88%E5%A0%B1/%E3%81%B2%E3%81%BE%E3%82%8F%E3%82%8A%E7%94%BB%E5%83%8F/",
+		"type": "album",
+		"author": "天気予報[Weather Forecast]",
+		"genre": "Vaporwave"
+	},
+	{
+		"title": "Hikikomori Days",
+		"url": "https://rateyourmusic.com/release/album/shoebill/hikikomori-days/",
+		"type": "album",
+		"author": "Shoebill",
+		"genre": "Mashcore, Breakcore"
+	},
+	{
+		"title": "Spiderland",
+		"url": "https://rateyourmusic.com/release/album/slint/spiderland/",
+		"type": "album",
+		"author": "Slint",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "Ants From Up There",
+		"url": "https://rateyourmusic.com/release/album/black-country-new-road/ants-from-up-there-1/",
+		"type": "album",
+		"author": "Black Country, New Road",
+		"genre": "Art Rock, Post-Rock"
+	},
+	{
+		"title": "For the First Time ",
+		"url": "https://rateyourmusic.com/release/album/black-country-new-road/for-the-first-time/",
+		"type": "album",
+		"author": "Black COuntry, New Road",
+		"genre": "Post-Rock, Post-Punk"
+	},
+	{
+		"title": "呼吸",
+		"url": "https://rateyourmusic.com/artist/lily-chou-chou",
+		"type": "album",
+		"author": "Lily Chou-Chou",
+		"genre": "ETHER, Dream Pop"
+	},
+	{
+		"title": "好き好き大好き",
+		"url": "https://rateyourmusic.com/release/album/%E6%88%B8%E5%B7%9D%E7%B4%94/%E5%A5%BD%E3%81%8D%E5%A5%BD%E3%81%8D%E5%A4%A7%E5%A5%BD%E3%81%8D/",
+		"type": "album",
+		"author": "戸川純 [Jun Towaga]",
+		"genre": "New Wave"
+	},
+	{
+		"title": "玉姫様",
+		"url": "https://rateyourmusic.com/release/album/%E6%88%B8%E5%B7%9D%E7%B4%94/%E7%8E%89%E5%A7%AB%E6%A7%98/",
+		"type": "album",
+		"author": "玉姫様 [Jun Towaga]",
+		"genre": "Art Pop, New Wave"
+	},
+	{
+		"title": "極東慰安唱歌",
+		"url": "https://rateyourmusic.com/release/album/%E6%88%B8%E5%B7%9D%E7%B4%94%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88/%E6%A5%B5%E6%9D%B1%E6%85%B0%E5%AE%89%E5%94%B1%E6%AD%8C-2/",
+		"type": "album",
+		"author": "玉姫様 [Jun Towaga]",
+		"genre": "Art Pop, New Wave"
+	},
+	{
+		"title": "わたしが鳴こうホトトギス",
+		"url": "https://rateyourmusic.com/release/album/%E6%88%B8%E5%B7%9D%E7%B4%94-with-vampillia/%E3%82%8F%E3%81%9F%E3%81%97%E3%81%8C%E9%B3%B4%E3%81%93%E3%81%86%E3%83%9B%E3%83%88%E3%83%88%E3%82%AE%E3%82%B9/",
+		"type": "album",
+		"author": "戸川純 with Vampillia",
+		"genre": "Art Pop"
+	},
+	{
+		"title": "The Texas-Jerusalem Crossroads",
+		"url": "https://rateyourmusic.com/artist/lift-to-experience",
+		"type": "album",
+		"author": "Lift to Experience",
+		"genre": "Post-Rock, Shoegaze"
+	},
+	{
+		"title": "From Mars to Sirius",
+		"url": "https://music.youtube.com/playlist?list=OLAK5uy_mcdIYSO2Ir4juv_bWBstX9QQLLT5FVaoM",
+		"type": "album",
+		"author": "Gojira",
+		"genre": "Progressive Metal"
+	},
+	{
+		"title": "The Way of All Flesh",
+		"url": "https://rateyourmusic.com/release/album/gojira/the-way-of-all-flesh/",
+		"type": "album",
+		"author": "Gojira",
+		"genre": "Progressive Metal"
+	},
+	{
+		"title": "Nonagon Infinity",
+		"url": "https://rateyourmusic.com/release/album/king-gizzard-and-the-lizard-wizard/nonagon-infinity/",
+		"type": "album",
+		"author": "King Gizzard and The Lizard Wizard",
+		"genre": "Psychedelic Rock"
+	},
+	{
+		"title": "PetroDragonic Apocalypse",
+		"url": "https://rateyourmusic.com/release/album/king-gizzard-and-the-lizard-wizard/petrodragonic-apocalypse-or-dawn-of-eternal-night-an-annihilation-of-planet-earth-and-the-beginning-of-merciless-damnation/",
+		"type": "album",
+		"author": "King Gizzard and The Lizard Wizard",
+		"genre": "Progressive Metal"
+	},
+	{
+		"title": "Ice, Death, Planets, Lungs, Mushrooms and Lava ",
+		"url": "https://rateyourmusic.com/release/album/king-gizzard-and-the-lizard-wizard/ice-death-planets-lungs-mushrooms-and-lava/",
+		"type": "album",
+		"author": "King Gizzard and The Lizard Wizard",
+		"genre": "Jazz-Rock, Psychedelic Rock"
+	},
+	{
+		"title": "Omnium Gatherum",
+		"url": "https://rateyourmusic.com/release/album/king-gizzard-and-the-lizard-wizard/omnium-gatherum/",
+		"type": "album",
+		"author": "King Gizzard and The Lizard Wizard",
+		"genre": "Psychedelic Rock"
+	},
+	{
+		"title": "肉声",
+		"url": "https://rateyourmusic.com/release/album/%E5%8F%8B%E5%B7%9D%E3%81%8B%E3%81%9A%E3%81%8D/%E8%82%89%E5%A3%B0-1/",
+		"type": "album",
+		"author": "友川かずき [Kazuki Tomokawa]",
+		"genre": "Avant-Folk"
+	},
+	{
+		"title": "Program Music I",
+		"url": "https://rateyourmusic.com/release/album/kashiwa-daisuke/program-music-i/",
+		"type": "album",
+		"author": "柏大輔 [Daisuke Kashiwa]",
+		"genre": "Modern Classical"
+	},
+	{
+		"title": "He Has Left Us Alone...",
+		"url": "https://rateyourmusic.com/release/album/a-silver-mt-zion/he-has-left-us-alone-but-shafts-of-light-sometimes-grace-the-corner-of-our-rooms/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "Horses in the Sky",
+		"url": "https://rateyourmusic.com/release/album/thee-silver-mt-zion-memorial-orchestra-and-tra-la-la-band/horses-in-the-sky/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "\"Born Into Trouble as the Sparks Fly Upward.\"",
+		"url": "https://rateyourmusic.com/release/album/the-silver-mt-zion-memorial-orchestra-and-tra-la-la-band/born-into-trouble-as-the-sparks-fly-upward/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "\"This Is Our Punk-Rock,\"",
+		"url": "https://rateyourmusic.com/release/album/the-silver-mt-zion-memorial-orchestra-and-tra-la-la-band-with-choir/this-is-our-punk-rock-thee-rusted-satellites-gather-sing/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "13 Blues for Thirteen Moons ",
+		"url": "https://rateyourmusic.com/release/album/thee-silver-mt-zion-memorial-orchestra-and-tra-la-la-band/13-blues-for-thirteen-moons/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
+	},
+	{
+		"title": "Fuck Off Get Free We Pour Light on Everything ",
+		"url": "https://rateyourmusic.com/release/album/thee-silver-mt-zion-memorial-orchestra/fuck-off-get-free-we-pour-light-on-everything/",
+		"type": "album",
+		"author": "Thee Silver Mt. Zion Memorial Orchestra",
+		"genre": "Post-Rock"
 	}
 ]
 
